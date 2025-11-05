@@ -7,6 +7,8 @@ int ListCheckNext(List* list);
 
 int ListCheckPrev(List* list);
 
-int OpenListLogfile();
+int OpenLogfileList();
+
+void CloseListLogfile();
 
 #endif

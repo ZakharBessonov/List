@@ -1,6 +1,8 @@
 #ifndef LIST_STRUCTS_HEADER
 #define LIST_STRUCTS_HEADER
 
+typedef int ListElem_t;
+
 enum Error
 {
     LIST_OK = 0,
@@ -12,31 +14,32 @@ enum Error
     BAD_NEXT = 32,
     BAD_PREV = 64,
     BAD_INDEX = 128,
-    FULL_LIST = 256
-}
+    FULL_LIST = 256,
+    BAD_FREE = 512,
+};
 
 struct RetAndErrors
 {
-    int retValue;
+    ListElem_t retValue;
     int error;
-}
+};
 
 struct Links
 {
     int next;
     int prev;
-}
+};
 
 struct List
 {
     size_t  numOfElems;
     size_t  elemCounter;
-    int*    data;
+    ListElem_t*    data;
     Links*  links;
     int     head;
     int     tail;
     int     free;
     int     fileCounter;
-}
+};
 
 #endif
